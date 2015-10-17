@@ -8,17 +8,13 @@
 			<h1><a href="">Aprendiendo Django</a></h1>
 		</div>
 
-		<div>
-			<p>Published: 16.10.2015, 13:22</p>
-			<h2><a href="">My First Post</a></h2>
-			<p>Estoy iniciando en Backend con Python y Django</p>
-		</div>
-
-		<div>
-			<p>published: 16.10.2015, 13:23</p>
-			<h2><a href="">My Second Post</a></h2>
-			<p>Vamos a mejorar nuestros conocimientos con nuevas herramientas de desarrollo</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<h1><a href="">{{post.title}}</a></h1>
+				<p>published : {{post.published_date}}</p>
+				<p>{{post.text | linebreaks }}</p>
+			</div>
+		{% endfor %}
 
 	</body>
 </html>
